@@ -1,12 +1,12 @@
 ﻿# 第6次練習-練習-PC6
 >
->學號：1234567 
+>學號：109111117 
 ><br />
->姓名：王小明 
+>姓名：潘耿劭 
 ><br />
->作業撰寫時間：180 (mins，包含程式撰寫時間)
+>作業撰寫時間：15 (mins，包含程式撰寫時間)
 ><br />
->最後撰寫文件日期：2022/10/12
+>最後撰寫文件日期：2022/10/27
 >
 
 本份文件包含以下主題：(至少需下面兩項，若是有多者可以自行新增)
@@ -23,9 +23,19 @@
 下段程式碼則為使用後結果：
 
 ```csharp
-public void mt_getResult(){
-    ...
-}
+    public partial class Test : System.Web.UI.Page
+    {
+        string[] s_school = new string [3] {"台科", "北科", "亞東"};
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            for (int i_Ct = 0; i_Ct < s_school.Length; i_Ct++)
+            {
+                ListItem c_L = new ListItem();
+                c_L.Text = c_L.Value = s_school[i_Ct];
+                ddl_Test.Items.Add(c_L);
+            }
+        }
+    }
 ```
 
 若要於內文中標示部分.aspx檔，則使用以下標籤` ```html 程式碼 ``` `，
@@ -38,16 +48,18 @@ public void mt_getResult(){
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" ...>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:DropDownList ID="ddl_Test" runat="server"></asp:DropDownList>
         </div>
     </form>
 </body>
 </html>
+
 ```
 
 
